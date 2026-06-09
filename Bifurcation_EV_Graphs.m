@@ -5,7 +5,7 @@ gamma = 1;
 %alpha = 0.29
 %alpha = 2.347510026817774; %transition time from low to high density; not infectivity!
 beta = 3.374; %calculated from root-finding the imaginary values in the Jacobian
-mu = 0.01;
+mu = 1/3e4;
 Lambda = 1;
 
 %R0 = (Lambda/mu)*(beta/gamma); %here we assume a steady population where deaths and immigration over a three-week interval are negligible
@@ -62,9 +62,11 @@ bif = [bifurcation_S; bifurcation_I; bifurcation_E; bifurcation_R]';
 figure;
     plot(bifurcation_alpha, bifurcation_S, 'LineWidth', 2);
     hold on;
+
+    plot(bifurcation_alpha, bifurcation_R, 'LineWidth', 2);
     plot(bifurcation_alpha, bifurcation_E, 'LineWidth', 2);
     plot(bifurcation_alpha, bifurcation_I, 'LineWidth', 2);
-    plot(bifurcation_alpha, bifurcation_R, 'LineWidth', 2);
+    
     hold off;
     xlabel('Progression Rate (\alpha)');
     ylabel('Number per Compartment');

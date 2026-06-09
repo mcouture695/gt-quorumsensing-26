@@ -28,7 +28,7 @@ gamma = 1;
 %alpha = 0.29
 alpha = 2.347510026817774; %transition time from low to high density; not infectivity!
 beta = 3.374; %calculated from root-finding the imaginary values in the Jacobian
-mu = 0.01;
+mu = 1/3e4;
 Lambda = 1;
 
 dSdt = Lambda - beta*S*I - mu*S;
